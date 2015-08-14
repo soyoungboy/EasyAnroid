@@ -1,4 +1,4 @@
-package com.soyoungboy.base;
+package com.soyoungboy.base.ui;
 
 import android.app.Dialog;
 import android.app.ProgressDialog;

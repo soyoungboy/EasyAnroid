@@ -1,4 +1,4 @@
-package com.soyoungboy.base;
+package com.soyoungboy.base.ui;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

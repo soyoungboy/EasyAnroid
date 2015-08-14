@@ -1,4 +1,4 @@
-package com.soyoungboy.base;
+package com.soyoungboy.base.ui;
 
 import android.app.Activity;
 import android.content.Context;
