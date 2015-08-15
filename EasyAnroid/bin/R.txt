@@ -1,3 +1,5 @@
+int attr CircleImageView_border_color 0x7f010000
+int attr CircleImageView_border_width 0x7f010001
 int color backColor 0x7f04000c
 int color background 0x7f040018
 int color black 0x7f040006
@@ -96,3 +98,6 @@ int style AppTheme 0x7f070001
 int style commonDialog 0x7f070004
 int style title_mid_leftbtn_style 0x7f070002
 int style title_mid_rightbtn_style 0x7f070003
+int[] styleable CircleImageView { 0x7f010000, 0x7f010001 }
+int styleable CircleImageView_CircleImageView_border_color 0
+int styleable CircleImageView_CircleImageView_border_width 1
