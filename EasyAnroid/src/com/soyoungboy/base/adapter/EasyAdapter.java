@@ -1,4 +1,4 @@
-package com.soyoungboy.base.ui;
+package com.soyoungboy.base.adapter;
 
 import java.util.ArrayList;
 import java.util.List;

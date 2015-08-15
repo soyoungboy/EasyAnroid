@@ -8,7 +8,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.TranslateAnimation;
 import android.widget.ScrollView;
-
+/**
+ * 重写的ScrollView用于实现界面上下的类似橡皮筋似得动画效果
+ * @author soyoungboy
+ *
+ */
 public class CustomerScrollView extends ScrollView {
     
     private Context mContext;
