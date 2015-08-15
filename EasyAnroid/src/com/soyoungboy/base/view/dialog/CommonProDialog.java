@@ -1,5 +1,5 @@
 
-package com.soyoungboy.base.dialog;
+package com.soyoungboy.base.view.dialog;
 
 import android.app.Activity;
 import android.app.Dialog;

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="sidebar_item_background_activated_dark">#ff4c365d</color>
     <color name="blue">#499BF7</color>
     <color name="white">#FFFFFF</color>
@@ -26,4 +27,8 @@
     <color name="naming">#ABABAB</color>
     <color name="background">#efefef</color>
     <color name="orange_yellow">#9b9ba0</color>
+    <color name="login_btn_bg">#009EE6</color>
+    <color name="main_bule">#40B0E3</color>
+    <color name="black_2">#424242</color>
+
 </resources>

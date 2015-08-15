@@ -12,9 +12,9 @@ import android.view.Window;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.soyoungboy.base.dialog.CommonProDialog;
 import com.soyoungboy.base.util.ImageLoadUtil;
 import com.soyoungboy.base.util.Logger;
+import com.soyoungboy.base.view.dialog.CommonProDialog;
 
 /** 
 * @ClassName: BaseActivity 
