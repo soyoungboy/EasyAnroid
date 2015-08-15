@@ -40,3 +40,15 @@
 
 新增圆形imageview
 
+
+----------
+2015年8月15日19:57:04 --
+
+修改EasyAdapter位置
+
+添加状态栏沉浸式实现工具类
+
+添加单利的Runnable实现 BaseTask.java
+
+添加邮箱后缀自动添加的自定义控件  EmailAutoCompleteTextview.java
+
