@@ -61,3 +61,9 @@
 
 修改dialog的位置到view下面
 
+----------
+
+2015年8月15日22:50:42 --
+
+新增左右可滑动的ListView开源库SwipeMenuListView
+
