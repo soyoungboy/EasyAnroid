@@ -52,3 +52,12 @@
 
 添加邮箱后缀自动添加的自定义控件  EmailAutoCompleteTextview.java
 
+
+----------
+
+2015年8月15日22:05:45 --
+
+新增fragement和viewpager的切换开源库viewpagerindicator
+
+修改dialog的位置到view下面
+
