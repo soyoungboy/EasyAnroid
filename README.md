@@ -67,3 +67,11 @@
 
 新增左右可滑动的ListView开源库SwipeMenuListView
 
+----------
+
+2015年8月18日10:23:33 --
+
+增加一个开源类QuickReturnListView
+
+新增一个城市选择时候的字母滑动的自定义控件
+
