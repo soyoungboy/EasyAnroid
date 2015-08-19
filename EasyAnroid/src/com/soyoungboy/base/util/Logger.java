@@ -22,7 +22,7 @@ import com.loopj.android.http.BuildConfig;
  * @Date: 2014-2-19 下午10:24:00
  */
 public class Logger {
-	private final static String TAG = "belle";
+	private final static String TAG = "Logger";
 
 	private final static boolean isDebug = BuildConfig.DEBUG;
 
