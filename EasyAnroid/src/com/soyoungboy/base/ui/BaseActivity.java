@@ -1,114 +1,50 @@
-package com.soyoungboy.base.ui;
+
+package com.yougou.android.ui;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.Dialog;
-import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
+import android.content.res.ColorStateList;
 import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
-import android.view.View.OnClickListener;
+import android.view.KeyEvent;
 import android.view.Window;
-import android.widget.TextView;
+import android.view.WindowManager;
+import android.widget.EditText;
 import android.widget.Toast;
 
-import com.soyoungboy.base.util.ImageLoadUtil;
-import com.soyoungboy.base.util.Logger;
-import com.soyoungboy.base.view.dialog.CommonProDialog;
-
 /**
- * 
- * @author soyoungboy
- *
+ * @类名: BaseActivity
+ * @描述: TODO(Activity基类，所有的Activity都要继承自该Activity)
+ * @作者: soyoungboy
  */
-public abstract class BaseActivity extends Activity implements OnClickListener{
-    protected String TAG = "belle";
-    private final static int DIALOG_PROGRESS = 1;
-    private ProgressDialog progressDialog;
-    private CommonProDialog waitingDialog;
-    protected Resources res;
+public class BaseActivity extends Activity {
+    
+    Resources res; // 通用资源缩写
+    
+    // 为0 短时间
+    // 为1 长时间
+    public static final int LENGTH_TIME = 0;
     
     @Override
-    protected void onCreate(Bundle arg0) {
-        super.onCreate(arg0);
-        Logger.d(this.getClass().getSimpleName() + "====>onCreate");
-        ImageLoadUtil.init(getApplicationContext());
+    protected void onCreate(Bundle savedInstanceState) {
+        requestWindowFeature(Window.FEATURE_NO_TITLE);// 不显示标题
+        super.onCreate(savedInstanceState);
         
-        TAG = this.getClass().getSimpleName();
+        res = getResources(); // 通用资源缩写
         
-        res = getResources();
-        // 鍙栨秷鏍囬
-        requestWindowFeature(Window.FEATURE_NO_TITLE); 
-        // 绔栧睆閿佸畾
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);		
+        // 优化输入法模式
+        int inputMode = WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN;
+        getWindow().setSoftInputMode(inputMode);
     }
     
-    /** 
-     * @Description: 鍒濆鍖朥I(setContentView鏀惧湪initView)    
-     * @return锛歷oid    
-     */
-    protected abstract void initView();
-    
-    /** 
-     * @Description: 鍒濆鍖栭《閮═itleView    
-     * @return锛歷oid    
-     */
-    protected abstract void initTitleView();
-    
-    /** 
-     * @Description: 鐐瑰嚮浜嬩欢
-     * @param view    
-     * @return锛歷oid    
-     */
-    protected abstract void click(View view);
-    
-    @Override
-    protected Dialog onCreateDialog(int id) {
-        switch (id) {
-            case DIALOG_PROGRESS:
-                waitingDialog = new CommonProDialog(BaseActivity.this, "姝ｅ湪鍔犺浇...");
-                waitingDialog.setCanceledOnTouchOutside(false);
-                return waitingDialog;
-                /*progressDialog = new ProgressDialog(BaseActivity.this);
-		  progressDialog.setMessage("鍔犺浇涓?..");
-		  return progressDialog;*/
-            default:
-                break;
-        }
-        return super.onCreateDialog(id);  
-    }
-    
-    protected void startProgressDialog() {
-        showDialog(DIALOG_PROGRESS);
-    }
-    
-    protected void dismissProgressDialog() {
-        removeDialog(DIALOG_PROGRESS);
-    }
-    
-    protected void showToast(String msg) {
-        Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
-    }
-    
-    protected void showToast(int msgId){
-        Toast.makeText(getApplicationContext(), msgId, Toast.LENGTH_SHORT).show();
-    }
-    
-    protected void getTextStr(TextView view) {
-        view.getText().toString().trim();
-    }
-    
-    protected String getResString(int id){
-        return getResources().getString(id);
-    }
     /**
-     * 妫?煡瀛楃涓叉槸鍚︽槸绌哄璞℃垨绌哄瓧绗︿覆
-     * @author wang.fb 
+     * 检查字符串是否是空对象或空字符串
+     * 
      * @param str
-     * @return 涓虹┖杩斿洖true,涓嶄负绌鸿繑鍥瀎alse
+     * @return 为空返回true,不为空返回false
      */
     public boolean isNull(String str) {
         if (TextUtils.isEmpty(str)) {
@@ -117,15 +53,24 @@ public abstract class BaseActivity extends Activity implements OnClickListener{
             return false;
         }
     }
+    
     /**
-     * 浠庡綋鍓峚ctivity璺宠浆鍒扮洰鏍嘺ctivity,<br>
-     * 濡傛灉鐩爣activity鏇剧粡鎵撳紑杩?灏遍噸鏂板睍鐜?<br>
-     * 濡傛灉浠庢潵娌℃墦寮?繃,灏辨柊寤轰竴涓墦寮?
-     * @author wang.fb
-     * @time 2014_4_10
+     * 检查字符串是否是字符串
+     * 
+     * @param str
+     * @return 为空返回true,不为空返回false
+     */
+    public boolean isStr(String str) {
+        return !isNull(str);
+    }
+    
+    /**
+     * 从当前activity跳转到目标activity,<br>
+     * 如果目标activity曾经打开过,就重新展现,<br>
+     * 如果从来没打开过,就新建一个打开
+     * 
      * @param cls
      */
-    @SuppressLint("InlinedApi")
     public void gotoExistActivity(Class<?> cls) {
         Intent intent;
         intent = new Intent(this.getApplicationContext(), cls);
@@ -134,9 +79,8 @@ public abstract class BaseActivity extends Activity implements OnClickListener{
     }
     
     /**
-     * 鏂板缓涓?釜activity鎵撳紑
-     * @author wang.fb
-     * @time 2014_4_10
+     * 新建一个activity打开
+     * 
      * @param cls
      */
     public void gotoActivity(Class<?> cls) {
@@ -145,50 +89,115 @@ public abstract class BaseActivity extends Activity implements OnClickListener{
         startActivity(intent);
     }
     
-    @Override
-    public void onClick(View v) {
-        click(v);
+    /**
+     * @Title: toast
+     * @Description: TODO(土司操作)
+     * @param @param context
+     * @param @param message 要显示的内容
+     * @return void 返回类型
+     * @throws
+     */
+    public void toast(String message) {
+        Toast.makeText(this.getApplicationContext(), message, LENGTH_TIME)
+            .show();
     }
     
-    @Override
-    protected void onStart() {
-        Logger.d(this.getClass().getSimpleName() + "====>onStart");
-        super.onStart();
+    /**
+     * @Title: toast
+     * @Description: TODO(土司操作)
+     * @param @param context
+     * @param @param message 设定文件
+     * @return void 返回类型
+     * @throws
+     */
+    public void toast(int message) {
+        Toast.makeText(this.getApplicationContext(), message, LENGTH_TIME)
+            .show();
     }
     
-    @Override
-    protected void onRestart() {
-        Logger.d(this.getClass().getSimpleName() + "====>onRestart");
-        super.onRestart();
+    /**
+     * 从资源获取字符串
+     * 
+     * @param resId
+     * @return
+     */
+    public String getStr(int resId) {
+        return res.getString(resId);
     }
     
-    @Override
-    protected void onResume() {
-        Logger.d(this.getClass().getSimpleName() + "====>onResume");
-        super.onResume();
-    }	
-    
-    @Override
-    protected void onPause() {
-        Logger.d(this.getClass().getSimpleName() + "====>onPause");
-        super.onPause();
+    /**
+     * @方法名: getDemon
+     * @描述: TODO(获取资源文件中的尺寸内容)
+     * @设定: @param mRid
+     * @设定: @return 设定文件
+     * @返回: int 返回类型
+     * @日期: 2014-6-30 下午2:14:11
+     * @throws
+     */
+    protected int getDemon(int mRid) {
+        return (int)res.getDimension(mRid);
     }
     
-    @Override
-    protected void onStop() {
-        Logger.d(this.getClass().getSimpleName() + "====>onStop");
-        super.onStop();
+    /**
+     * 从EditText 获取字符串
+     * 
+     * @param editText
+     * @return
+     */
+    public String getStr(EditText editText) {
+        return editText.getText().toString();
     }
     
-    @Override
-    protected void onDestroy() {
-        Logger.d(this.getClass().getSimpleName() + "====>onDestroy");
-        super.onDestroy();
-    }
+    /**
+     * 获取boolean值
+     * @param resId
+     * @return
+     */
+    public boolean getBoolean(int resId){
+		return getResources().getBoolean(resId);
+	}
+    
+    /**
+     * 获取颜色值
+     * @param resId
+     * @return
+     */
+    public int getColor(int resId){
+		return getResources().getColor(resId);
+	}
+    
+	public ColorStateList getColorStateList(int resId){
+		return getResources().getColorStateList(resId);
+	}
+	
+	/**
+	 * 获取尺寸信息
+	 * @param resId
+	 * @return
+	 */
+	public float getDimension(int resId){
+		return getResources().getDimension(resId);
+	}
+	
+	public float getDimensionPixelOffset(int resId){
+		return getResources().getDimensionPixelOffset(resId);
+	}
+	
+	public float getDimensionPixelSize(int resId){
+		return getResources().getDimensionPixelSize(resId);
+	}
+	
+	@SuppressLint("Override")
+	public Drawable getDrawable(int resId){
+		return getResources().getDrawable(resId);
+	}
     
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        Logger.d(this.getClass().getSimpleName() + "====>onSaveInstanceState");
-        super.onSaveInstanceState(outState);
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        switch (keyCode) {
+            case KeyEvent.KEYCODE_BACK:
+                this.finish();
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }
