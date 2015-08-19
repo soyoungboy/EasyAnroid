@@ -81,3 +81,7 @@
 
 新增单利类的生成的工具类SingletonUtils.java和桌面快捷方式ShortCutUtils.java实现的封装
 
+2015年8月19日22:24:07 --
+
+修改BaseActivity,新增Activity之间传递list,对象等工具类 FlashIntentUtils.java
+
