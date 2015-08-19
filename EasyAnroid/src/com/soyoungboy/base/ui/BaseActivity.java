@@ -1,5 +1,5 @@
 
-package com.yougou.android.ui;
+package com.soyoungboy.base.ui;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
