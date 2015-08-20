@@ -87,3 +87,9 @@
 
 修改BaseActivity,新增Activity之间传递list,对象等工具类 FlashIntentUtils.java
 
+2015年8月20日13:54:23 --
+
+引入thinkInAndroid项目里面对网络状态的监听的封装 ，thinks thinkInAndroid作者的这几个类
+
+
+
