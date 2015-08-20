@@ -91,11 +91,16 @@
 
 2015年8月20日13:54:23 --
 
-引入thinkInAndroid项目里面对网络状态的监听的封装 ，thinks thinkInAndroid作者的这几个类
+引入thinkInAndroid项目里面对网络状态的监听的封装 ，
+
+thinks thinkInAndroid作者的这几个类
 
 ----------
+
 2015年8月20日14:00:15 --
+
 BaseApplication.java -- 自定义application
+
 CrashHandler.java -- 全局异常监听处理工具类
 
 
