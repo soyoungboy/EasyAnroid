@@ -412,21 +412,22 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static int action_settings=0x7f060002;
         public static int all=0x7f060005;
         public static int app_name=0x7f060000;
-        public static int cancle=0x7f06000f;
+        public static int cancle=0x7f060010;
         public static int group=0x7f060004;
         public static int hello=0x7f060001;
         public static int hello_world=0x7f060003;
-        public static int p2refresh_doing_end_refresh=0x7f06000c;
-        public static int p2refresh_doing_head_refresh=0x7f06000b;
-        public static int p2refresh_end_click_load_more=0x7f060008;
-        public static int p2refresh_end_load_more=0x7f060007;
+        public static int not_add_more_text=0x7f060006;
+        public static int p2refresh_doing_end_refresh=0x7f06000d;
+        public static int p2refresh_doing_head_refresh=0x7f06000c;
+        public static int p2refresh_end_click_load_more=0x7f060009;
+        public static int p2refresh_end_load_more=0x7f060008;
         /**  Refresh 
          */
-        public static int p2refresh_head_load_more=0x7f060006;
-        public static int p2refresh_pull_to_refresh=0x7f06000a;
-        public static int p2refresh_refresh_lasttime=0x7f06000d;
-        public static int p2refresh_release_refresh=0x7f060009;
-        public static int sure=0x7f06000e;
+        public static int p2refresh_head_load_more=0x7f060007;
+        public static int p2refresh_pull_to_refresh=0x7f06000b;
+        public static int p2refresh_refresh_lasttime=0x7f06000e;
+        public static int p2refresh_release_refresh=0x7f06000a;
+        public static int sure=0x7f06000f;
     }
     public static final class style {
         /** 

@@ -8,6 +8,7 @@
 
     <string name="group">分组</string>
     <string name="all">全部</string>
+    <string name="not_add_more_text">输入的内容超过100个字</string>
     
     <!-- Refresh -->
     <string name="p2refresh_head_load_more">加载更多</string>
