@@ -103,5 +103,11 @@ BaseApplication.java -- 自定义application
 
 CrashHandler.java -- 全局异常监听处理工具类
 
+----------
+
+2015年8月29日23:46:40 --
+
+新增对EditText内容长度的限制的工具类EditTextUtils.java工具类
+
 
 
