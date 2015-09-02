@@ -109,5 +109,10 @@ CrashHandler.java -- 全局异常监听处理工具类
 
 新增对EditText内容长度的限制的工具类EditTextUtils.java工具类
 
+----------
+
+2015年9月2日08:47:48 --
+
+新增对于okhttp的工具类的添加（代码来自最近翔哥分享的okhttp工具类）
 
 
