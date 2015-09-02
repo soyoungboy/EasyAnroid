@@ -93,7 +93,7 @@
 
 引入thinkInAndroid项目里面对网络状态的监听的封装 ，
 
-thinks thinkInAndroid作者的这几个类
+thanks thinkInAndroid作者的这几个类
 
 ----------
 
