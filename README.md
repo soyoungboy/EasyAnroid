@@ -114,5 +114,8 @@ CrashHandler.java -- 全局异常监听处理工具类
 2015年9月2日08:47:48 --
 
 新增对于okhttp的工具类的添加（代码来自最近翔哥分享的okhttp工具类）
+okhttp-2.5.0.jar
+okio-1.6.0.jar
+
 
 
