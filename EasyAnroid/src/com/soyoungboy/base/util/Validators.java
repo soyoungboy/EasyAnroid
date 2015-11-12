@@ -59,7 +59,7 @@ public abstract class Validators {
      * 电话号码的正则表达式。
      */
     private static final String REGEX_PHONE_NUMBER =
-        "(([\\(（]\\d+[\\)）])?|(\\d+[-－]?)*)\\d+";
+        "^(0(10|2\\d|[3-9]\\d\\d)[- ]{0,3}\\d{7,8}|0?1[3584]\\d{9})$";
     
     /**
      * 判断字符串是否只包含字母和数字.
