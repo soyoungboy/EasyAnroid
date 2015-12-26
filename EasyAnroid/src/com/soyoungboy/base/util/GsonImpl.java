@@ -11,7 +11,7 @@ import com.google.gson.reflect.TypeToken;
  * 
  * TODO: json工具类
  * 
- * @author soyoungboy
+ * @author 我只添加了最后一个方法，其他部分来自lite的工具类
  * @date 2014-11-8 下午2:32:43
  */
 public class GsonImpl extends Json {
