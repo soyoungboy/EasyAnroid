@@ -59,13 +59,13 @@ public class SwipeMenuItem {
     }
 
 
-    public void setTitle(int resId) {
-        setTitle(mContext.getString(resId));
+    public void setTitle(String title) {
+        this.title = title;
     }
 
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitle(int resId) {
+        setTitle(mContext.getString(resId));
     }
 
 
@@ -74,13 +74,13 @@ public class SwipeMenuItem {
     }
 
 
-    public void setIcon(int resId) {
-        this.icon = mContext.getResources().getDrawable(resId);
+    public void setIcon(Drawable icon) {
+        this.icon = icon;
     }
 
 
-    public void setIcon(Drawable icon) {
-        this.icon = icon;
+    public void setIcon(int resId) {
+        this.icon = mContext.getResources().getDrawable(resId);
     }
 
 
@@ -89,13 +89,13 @@ public class SwipeMenuItem {
     }
 
 
-    public void setBackground(int resId) {
-        this.background = mContext.getResources().getDrawable(resId);
+    public void setBackground(Drawable background) {
+        this.background = background;
     }
 
 
-    public void setBackground(Drawable background) {
-        this.background = background;
+    public void setBackground(int resId) {
+        this.background = mContext.getResources().getDrawable(resId);
     }
 
 

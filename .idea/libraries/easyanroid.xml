@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="easyanroid">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/EasyAnroid/bin/easyanroid.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

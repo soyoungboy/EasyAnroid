@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/EasyAnroid/libs/android-async-http-1.4.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/EasyAnroid/libs/okhttp-2.5.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/EasyAnroid/libs/okio-1.6.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/EasyAnroid/libs/android-support-v4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/EasyAnroid/libs/gson-2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/EasyAnroid/libs/imageloader-1.9.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
