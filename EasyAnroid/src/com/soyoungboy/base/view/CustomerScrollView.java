@@ -1,4 +1,3 @@
-
 package com.soyoungboy.base.view;
 
 import android.content.Context;
@@ -8,43 +7,50 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.TranslateAnimation;
 import android.widget.ScrollView;
+
 /**
  * 重写的ScrollView用于实现界面上下的类似橡皮筋似得动画效果
- * @author soyoungboy
  *
+ * @author soyoungboy
  */
 public class CustomerScrollView extends ScrollView {
-    
+
     private Context mContext;
-    
+
     private View mView;
-    
+
     private Rect mRect = new Rect();
-    
+
     private float y;
-    
+
+
     public CustomerScrollView(Context context) {
         super(context);
         this.mContext = context;
     }
-    
+
+
     public CustomerScrollView(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.mContext = context;
     }
-    
+
+
     public CustomerScrollView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         this.mContext = context;
     }
-    
+
+
     @Override
     protected void onFinishInflate() {
+        super.onFinishInflate();
         if (getChildCount() > 0) {
             this.mView = getChildAt(0);
         }
     }
-    
+
+
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
         if (mView == null) {
@@ -54,7 +60,8 @@ public class CustomerScrollView extends ScrollView {
         }
         return super.onTouchEvent(ev);
     }
-    
+
+
     private void commOnTouchEvent(MotionEvent ev) {
         int action = ev.getAction();
         switch (action) {
@@ -69,7 +76,7 @@ public class CustomerScrollView extends ScrollView {
             case MotionEvent.ACTION_MOVE:
                 final float preY = y;
                 float nowY = ev.getY();
-                int deltaY = (int)(preY - nowY);
+                int deltaY = (int) (preY - nowY);
                 scrollBy(0, deltaY);
                 y = nowY;
                 if (isNeedMove()) {
@@ -92,20 +99,20 @@ public class CustomerScrollView extends ScrollView {
                 break;
         }
     }
-    
+
+
     private boolean isNeedMove() {
         int offset = mView.getMeasuredHeight() - getHeight();
         int scrollY = getScrollY();
-        if (scrollY == 0 || scrollY == offset) {
-            return true;
-        }
-        return false;
+        return scrollY == 0 || scrollY == offset;
     }
-    
+
+
     private boolean isNeedAnimation() {
         return !mRect.isEmpty();
     }
-    
+
+
     private void animation() {
         TranslateAnimation ta =
             new TranslateAnimation(0, 0, mView.getTop(), mRect.top);
@@ -113,6 +120,6 @@ public class CustomerScrollView extends ScrollView {
         mView.startAnimation(ta);
         mView.layout(mRect.left, mRect.top, mRect.right, mRect.bottom);
         mRect.setEmpty();
-        
+
     }
 }

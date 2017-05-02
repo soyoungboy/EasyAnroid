@@ -2,9 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.soyoungboy.base"
     android:versionCode="1"
-    android:versionName="0.0.1-SNAPSHOT" >
-	
+    android:versionName="0.0.1-SNAPSHOT">
+
     <uses-sdk
         android:minSdkVersion="11"
-        android:targetSdkVersion="18" />
+        android:targetSdkVersion="18"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 </manifest>

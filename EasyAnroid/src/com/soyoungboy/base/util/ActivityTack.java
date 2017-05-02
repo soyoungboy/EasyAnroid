@@ -1,11 +1,9 @@
-
 package com.soyoungboy.base.util;
-
-import java.util.Stack;
 
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
+import java.util.Stack;
 
 /**
  * @类名: ActivityTack
@@ -14,12 +12,14 @@ import android.content.Context;
  */
 public class ActivityTack {
     private static Stack<Activity> activityStack;
-    
+
     private static ActivityTack instance;
-    
+
+
     private ActivityTack() {
     }
-    
+
+
     /**
      * 单一实例
      */
@@ -29,7 +29,8 @@ public class ActivityTack {
         }
         return instance;
     }
-    
+
+
     /**
      * 添加Activity到堆栈
      */
@@ -39,15 +40,16 @@ public class ActivityTack {
         }
         activityStack.add(activity);
     }
-    
+
+
     /**
      * 获取当前Activity（堆栈中最后一个压入的）
      */
     public Activity currentActivity() {
-        Activity activity = activityStack.lastElement();
-        return activity;
+        return activityStack.lastElement();
     }
-    
+
+
     /**
      * 结束当前Activity（堆栈中最后一个压入的）
      */
@@ -55,7 +57,8 @@ public class ActivityTack {
         Activity activity = activityStack.lastElement();
         finishActivity(activity);
     }
-    
+
+
     /**
      * 结束指定的Activity
      */
@@ -66,7 +69,8 @@ public class ActivityTack {
             activity = null;
         }
     }
-    
+
+
     /**
      * 结束指定类名的Activity
      */
@@ -77,7 +81,8 @@ public class ActivityTack {
             }
         }
     }
-    
+
+
     /**
      * 结束所有Activity
      */
@@ -89,7 +94,8 @@ public class ActivityTack {
         }
         activityStack.clear();
     }
-    
+
+
     /**
      * 退出应用程序
      */
@@ -98,7 +104,7 @@ public class ActivityTack {
         try {
             finishAllActivity();
             ActivityManager activityMgr =
-                (ActivityManager)context.getSystemService(Context.ACTIVITY_SERVICE);
+                (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
             activityMgr.restartPackage(context.getPackageName());
             System.exit(0);
         } catch (Exception e) {

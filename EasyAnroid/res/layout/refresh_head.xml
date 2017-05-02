@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- ListView的头部 -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content" 
+    android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:layout_gravity="center_vertical"
     android:background="@color/white">
@@ -23,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true" 
+            android:layout_centerVertical="true"
             android:layout_marginLeft="30dp">
 
             <!-- 箭头 -->
@@ -34,18 +35,18 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:contentDescription="@string/app_name"
-                android:src="@drawable/refresh_arrow" />
+                android:src="@drawable/refresh_arrow"/>
 
             <!-- 进度条 -->
 
             <ProgressBar
-                android:id="@+id/head_progressBar"
                 style="?android:attr/progressBarStyleSmall"
+                android:id="@+id/head_progressBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:indeterminateDrawable="@drawable/refresh_progress"
-                android:visibility="gone" />
+                android:visibility="gone"/>
         </FrameLayout>
 
         <!-- 提示、最近更新 -->
@@ -55,7 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:gravity="center_horizontal"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <!-- 提示 -->
 
@@ -64,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/p2refresh_release_refresh"
-                android:textSize="18sp" />
+                android:textSize="18sp"/>
 
             <!-- 最近更新 -->
 
@@ -74,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
                 android:text="@string/p2refresh_refresh_lasttime"
-                android:textSize="12sp" />
+                android:textSize="12sp"/>
         </LinearLayout>
     </RelativeLayout>
 

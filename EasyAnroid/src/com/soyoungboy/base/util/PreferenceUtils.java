@@ -1,4 +1,3 @@
-
 package com.soyoungboy.base.util;
 
 import android.content.Context;
@@ -7,91 +6,101 @@ import android.content.SharedPreferences.Editor;
 import android.preference.PreferenceManager;
 
 /**
- * 
  * @类名: PreferenceUtils
  * @描述: TODO(这里用一句话描述这个类的作用)
  * @作�?: soyoungboy
  */
 public class PreferenceUtils {
     public static String getPrefString(Context context, String key,
-        final String defaultValue) {
+                                       final String defaultValue) {
         final SharedPreferences settings =
             PreferenceManager.getDefaultSharedPreferences(context);
         return settings.getString(key, defaultValue);
     }
-    
+
+
     public static void setPrefString(Context context, final String key,
-        final String value) {
+                                     final String value) {
         final SharedPreferences settings =
             PreferenceManager.getDefaultSharedPreferences(context);
-        settings.edit().putString(key, value).commit();
+        settings.edit().putString(key, value).apply();
     }
-    
+
+
     public static boolean getPrefBoolean(Context context, final String key,
-        final boolean defaultValue) {
+                                         final boolean defaultValue) {
         final SharedPreferences settings =
             PreferenceManager.getDefaultSharedPreferences(context);
         return settings.getBoolean(key, defaultValue);
     }
-    
+
+
     public static boolean hasKey(Context context, final String key) {
         return PreferenceManager.getDefaultSharedPreferences(context)
             .contains(key);
     }
-    
+
+
     public static void setPrefBoolean(Context context, final String key,
-        final boolean value) {
+                                      final boolean value) {
         final SharedPreferences settings =
             PreferenceManager.getDefaultSharedPreferences(context);
-        settings.edit().putBoolean(key, value).commit();
+        settings.edit().putBoolean(key, value).apply();
     }
-    
+
+
     public static void setPrefInt(Context context, final String key,
-        final int value) {
+                                  final int value) {
         final SharedPreferences settings =
             PreferenceManager.getDefaultSharedPreferences(context);
-        settings.edit().putInt(key, value).commit();
+        settings.edit().putInt(key, value).apply();
     }
-    
+
+
     public static int getPrefInt(Context context, final String key,
-        final int defaultValue) {
+                                 final int defaultValue) {
         final SharedPreferences settings =
             PreferenceManager.getDefaultSharedPreferences(context);
         return settings.getInt(key, defaultValue);
     }
-    
+
+
     public static void setPrefFloat(Context context, final String key,
-        final float value) {
+                                    final float value) {
         final SharedPreferences settings =
             PreferenceManager.getDefaultSharedPreferences(context);
-        settings.edit().putFloat(key, value).commit();
+        settings.edit().putFloat(key, value).apply();
     }
-    
+
+
     public static float getPrefFloat(Context context, final String key,
-        final float defaultValue) {
+                                     final float defaultValue) {
         final SharedPreferences settings =
             PreferenceManager.getDefaultSharedPreferences(context);
         return settings.getFloat(key, defaultValue);
     }
-    
+
+
     public static void setSettingLong(Context context, final String key,
-        final long value) {
+                                      final long value) {
         final SharedPreferences settings =
             PreferenceManager.getDefaultSharedPreferences(context);
-        settings.edit().putLong(key, value).commit();
+        settings.edit().putLong(key, value).apply();
     }
-    
+
+
     public static long getPrefLong(Context context, final String key,
-        final long defaultValue) {
+                                   final long defaultValue) {
         final SharedPreferences settings =
             PreferenceManager.getDefaultSharedPreferences(context);
         return settings.getLong(key, defaultValue);
     }
-    
+
+
     public static void clearPreference(Context context,
-        final SharedPreferences p) {
+                                       final SharedPreferences p) {
         final Editor editor = p.edit();
         editor.clear();
-        editor.commit();
+        editor.apply();
     }
 }

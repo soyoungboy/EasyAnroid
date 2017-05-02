@@ -18,27 +18,27 @@ package com.soyoungboy.base.util.netstate;
 
 import com.soyoungboy.base.util.netstate.TANetWorkUtil.netType;
 
-
 /**
+ * @author 白猫
+ * @version V1.0
  * @Title TANetChangeObserver
  * @Package com.ta.util.netstate
  * @Description 是检测网络改变的观察者
- * @author 白猫
  * @date 2013-1-22 下午 9:35
- * @version V1.0
  */
 public class TANetChangeObserver {
     /**
      * 网络连接连接时调用
      */
     public void onConnect(netType type) {
-        
+
     }
-    
+
+
     /**
      * 当前没有网络连接
      */
     public void onDisConnect() {
-        
+
     }
 }

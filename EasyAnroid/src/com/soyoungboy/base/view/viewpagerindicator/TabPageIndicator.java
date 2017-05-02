@@ -16,8 +16,6 @@
  */
 package com.soyoungboy.base.view.viewpagerindicator;
 
-import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
-import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -28,8 +26,10 @@ import android.view.ViewGroup;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import com.soyoungboy.base.R;
+
+import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
+import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 
 /**
  * This widget implements the dynamic action bar tab behavior that can change
@@ -38,24 +38,16 @@ import com.soyoungboy.base.R;
 public class TabPageIndicator extends HorizontalScrollView implements PageIndicator {
     /** Title text used when no title is provided by the adapter. */
     private static final CharSequence EMPTY_TITLE = "";
-
-    /**
-     * Interface for a callback when the selected tab has been reselected.
-     */
-    public interface OnTabReselectedListener {
-        /**
-         * Callback when the selected tab has been reselected.
-         *
-         * @param position Position of the current center item.
-         */
-        void onTabReselected(int position);
-    }
-
+    private final IcsLinearLayout mTabLayout;
     private Runnable mTabSelector;
-
+    private ViewPager mViewPager;
+    private ViewPager.OnPageChangeListener mListener;
+    private int mMaxTabWidth;
+    private int mSelectedTabIndex;
+    private OnTabReselectedListener mTabReselectedListener;
     private final OnClickListener mTabClickListener = new OnClickListener() {
         public void onClick(View view) {
-            TabView tabView = (TabView)view;
+            TabView tabView = (TabView) view;
             final int oldSelected = mViewPager.getCurrentItem();
             final int newSelected = tabView.getIndex();
             mViewPager.setCurrentItem(newSelected);
@@ -65,19 +57,11 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
         }
     };
 
-    private final IcsLinearLayout mTabLayout;
-
-    private ViewPager mViewPager;
-    private ViewPager.OnPageChangeListener mListener;
-
-    private int mMaxTabWidth;
-    private int mSelectedTabIndex;
-
-    private OnTabReselectedListener mTabReselectedListener;
 
     public TabPageIndicator(Context context) {
         this(context, null);
     }
+
 
     public TabPageIndicator(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -87,9 +71,11 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
         addView(mTabLayout, new ViewGroup.LayoutParams(WRAP_CONTENT, MATCH_PARENT));
     }
 
+
     public void setOnTabReselectedListener(OnTabReselectedListener listener) {
         mTabReselectedListener = listener;
     }
+
 
     @Override
     public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -98,9 +84,10 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
         setFillViewport(lockedExpanded);
 
         final int childCount = mTabLayout.getChildCount();
-        if (childCount > 1 && (widthMode == MeasureSpec.EXACTLY || widthMode == MeasureSpec.AT_MOST)) {
+        if (childCount > 1 &&
+            (widthMode == MeasureSpec.EXACTLY || widthMode == MeasureSpec.AT_MOST)) {
             if (childCount > 2) {
-                mMaxTabWidth = (int)(MeasureSpec.getSize(widthMeasureSpec) * 0.4f);
+                mMaxTabWidth = (int) (MeasureSpec.getSize(widthMeasureSpec) * 0.4f);
             } else {
                 mMaxTabWidth = MeasureSpec.getSize(widthMeasureSpec) / 2;
             }
@@ -118,6 +105,7 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
         }
     }
 
+
     private void animateToTab(final int position) {
         final View tabView = mTabLayout.getChildAt(position);
         if (mTabSelector != null) {
@@ -133,6 +121,7 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
         post(mTabSelector);
     }
 
+
     @Override
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
@@ -142,6 +131,7 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
         }
     }
 
+
     @Override
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
@@ -149,6 +139,7 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
             removeCallbacks(mTabSelector);
         }
     }
+
 
     private void addTab(int index, CharSequence text, int iconResId) {
         final TabView tabView = new TabView(getContext());
@@ -164,12 +155,14 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
         mTabLayout.addView(tabView, new LinearLayout.LayoutParams(0, MATCH_PARENT, 1));
     }
 
+
     @Override
     public void onPageScrollStateChanged(int arg0) {
         if (mListener != null) {
             mListener.onPageScrollStateChanged(arg0);
         }
     }
+
 
     @Override
     public void onPageScrolled(int arg0, float arg1, int arg2) {
@@ -178,6 +171,7 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
         }
     }
 
+
     @Override
     public void onPageSelected(int arg0) {
         setCurrentItem(arg0);
@@ -185,6 +179,7 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
             mListener.onPageSelected(arg0);
         }
     }
+
 
     @Override
     public void setViewPager(ViewPager view) {
@@ -203,12 +198,13 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
         notifyDataSetChanged();
     }
 
+
     public void notifyDataSetChanged() {
         mTabLayout.removeAllViews();
         PagerAdapter adapter = mViewPager.getAdapter();
         IconPagerAdapter iconAdapter = null;
         if (adapter instanceof IconPagerAdapter) {
-            iconAdapter = (IconPagerAdapter)adapter;
+            iconAdapter = (IconPagerAdapter) adapter;
         }
         final int count = adapter.getCount();
         for (int i = 0; i < count; i++) {
@@ -229,11 +225,13 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
         requestLayout();
     }
 
+
     @Override
     public void setViewPager(ViewPager view, int initialPosition) {
         setViewPager(view);
         setCurrentItem(initialPosition);
     }
+
 
     @Override
     public void setCurrentItem(int item) {
@@ -254,17 +252,34 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
         }
     }
 
+
     @Override
     public void setOnPageChangeListener(OnPageChangeListener listener) {
         mListener = listener;
     }
 
+
+    /**
+     * Interface for a callback when the selected tab has been reselected.
+     */
+    public interface OnTabReselectedListener {
+        /**
+         * Callback when the selected tab has been reselected.
+         *
+         * @param position Position of the current center item.
+         */
+        void onTabReselected(int position);
+    }
+
+
     private class TabView extends TextView {
         private int mIndex;
+
 
         public TabView(Context context) {
             super(context, null, R.attr.vpiTabPageIndicatorStyle);
         }
+
 
         @Override
         public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -273,9 +288,10 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
             // Re-measure if we went beyond our maximum size.
             if (mMaxTabWidth > 0 && getMeasuredWidth() > mMaxTabWidth) {
                 super.onMeasure(MeasureSpec.makeMeasureSpec(mMaxTabWidth, MeasureSpec.EXACTLY),
-                        heightMeasureSpec);
+                    heightMeasureSpec);
             }
         }
+
 
         public int getIndex() {
             return mIndex;

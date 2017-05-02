@@ -2,23 +2,31 @@
 <resources>
 
     <declare-styleable name="CircleImageView">
-        <attr name="CircleImageView_border_color" format="color" />
-        <attr name="CircleImageView_border_width" format="dimension"></attr>
+        <attr name="CircleImageView_border_color"
+            format="color"/>
+        <attr name="CircleImageView_border_width"
+            format="dimension"></attr>
     </declare-styleable>
     <declare-styleable name="ViewPagerIndicator">
 
         <!-- Style of the circle indicator. -->
-        <attr name="vpiCirclePageIndicatorStyle" format="reference" />
+        <attr name="vpiCirclePageIndicatorStyle"
+            format="reference"/>
         <!-- Style of the icon indicator's views. -->
-        <attr name="vpiIconPageIndicatorStyle" format="reference" />
+        <attr name="vpiIconPageIndicatorStyle"
+            format="reference"/>
         <!-- Style of the line indicator. -->
-        <attr name="vpiLinePageIndicatorStyle" format="reference" />
+        <attr name="vpiLinePageIndicatorStyle"
+            format="reference"/>
         <!-- Style of the title indicator. -->
-        <attr name="vpiTitlePageIndicatorStyle" format="reference" />
+        <attr name="vpiTitlePageIndicatorStyle"
+            format="reference"/>
         <!-- Style of the tab indicator's tabs. -->
-        <attr name="vpiTabPageIndicatorStyle" format="reference" />
+        <attr name="vpiTabPageIndicatorStyle"
+            format="reference"/>
         <!-- Style of the underline indicator. -->
-        <attr name="vpiUnderlinePageIndicatorStyle" format="reference" />
+        <attr name="vpiUnderlinePageIndicatorStyle"
+            format="reference"/>
     </declare-styleable>
 
 </resources>
