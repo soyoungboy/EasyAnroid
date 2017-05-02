@@ -1,123 +1,744 @@
 # EasyAnroid
 将以前的项目中的常用代码进行基类，为以后开发方便调用，欢迎star and fork 
 
-时间线：
+<div>
 
-2015年8月13日17:16:42 -- 首次提交常用代码库
+<div><EasyAnroid></div>
 
-----------
+<div>├.classpath</div>
 
-2015年8月14日09:37:34 -- 
+<div>├.project</div>
 
-1 增加gson 方便解析json工具类
+<div>├AndroidManifest.xml</div>
 
-2 修改目录结构
+<div>├EasyAnroid.iml</div>
 
-3 新增EasyAdapter,使得adapter写法更加方便
+<div>├ic_launcher-web.png</div>
 
-----------
+<div>├proguard-project.txt</div>
 
-2015年8月14日10:14:20 -- 
+<div>├project.properties</div>
 
-新增表情屏蔽控件
+<div>├<.settings></div>
 
-----------
+<div>│  ├org.eclipse.core.resources.prefs</div>
 
-2015年8月14日15:28:55 -- 
+<div>│  └org.jboss.ide.eclipse.as.core.prefs</div>
 
-新增BaseBean里面getBeanFromJson这个方法，自动解析json为javaBean的对象
+<div>├<bin></div>
 
-----------
+<div>│  ├AndroidManifest.xml</div>
 
-2015年8月14日22:12:42 --
+<div>│  ├easyanroid.jar</div>
 
-新增activity管理工具类，Intent跳转工具类，List相关工具类，拍照相关调用工具类，service工具类，线程池工具类以及优化。
+<div>│  ├jarlist.cache</div>
 
+<div>│  ├R.txt</div>
 
-----------
+<div>│  ├<classes></div>
 
-2015年8月15日18:59:01 --
+<div>│  │  ├<com></div>
 
-新增圆形imageview
+<div>│  │  │  ├<soyoungboy></div>
 
+<div>│  │  │  │  ├<base></div>
 
-----------
-2015年8月15日19:57:04 --
+<div>│  │  │  │  │  ├BuildConfig.class</div>
 
-修改EasyAdapter位置
+<div>│  │  │  │  │  ├R$attr.class</div>
 
-添加状态栏沉浸式实现工具类
+<div>│  │  │  │  │  ├R$bool.class</div>
 
-添加单利的Runnable实现 BaseTask.java
+<div>│  │  │  │  │  ├R$color.class</div>
 
-添加邮箱后缀自动添加的自定义控件  EmailAutoCompleteTextview.java
+<div>│  │  │  │  │  ├R$dimen.class</div>
 
+<div>│  │  │  │  │  ├R$drawable.class</div>
 
-----------
+<div>│  │  │  │  │  ├R$id.class</div>
 
-2015年8月15日22:05:45 --
+<div>│  │  │  │  │  ├R$integer.class</div>
 
-新增fragement和viewpager的切换开源库viewpagerindicator
+<div>│  │  │  │  │  ├R$layout.class</div>
 
-修改dialog的位置到view下面
+<div>│  │  │  │  │  ├R$string.class</div>
 
-----------
+<div>│  │  │  │  │  ├R$style.class</div>
 
-2015年8月15日22:50:42 --
+<div>│  │  │  │  │  ├R$styleable.class</div>
 
-新增左右可滑动的ListView开源库SwipeMenuListView
+<div>│  │  │  │  │  ├R.class</div>
 
-----------
+<div>│  │  │  │  │  ├<adapter></div>
 
-2015年8月18日10:23:33 --
+<div>│  │  │  │  │  │  └EasyAdapter.class</div>
 
-增加一个开源类QuickReturnListView
+<div>│  │  │  │  │  ├<application></div>
 
-新增一个城市选择时候的字母滑动的自定义控件
+<div>│  │  │  │  │  │  └BaseApplication.class</div>
 
-----------
+<div>│  │  │  │  │  ├<bean></div>
 
-2015年8月19日22:24:07 --
+<div>│  │  │  │  │  │  └BaseBean.class</div>
 
-新增单利类的生成的工具类SingletonUtils.java和桌面快捷方式ShortCutUtils.java实现的封装
+<div>│  │  │  │  │  ├<exception></div>
 
-----------
+<div>│  │  │  │  │  │  └CrashHandler.class</div>
 
-2015年8月19日22:24:07 --
+<div>│  │  │  │  │  ├<ui></div>
 
-修改BaseActivity,新增Activity之间传递list,对象等工具类 FlashIntentUtils.java
+<div>│  │  │  │  │  │  ├BaseActivity.class</div>
 
-----------
+<div>│  │  │  │  │  │  ├BaseFragment.class</div>
 
-2015年8月20日13:54:23 --
+<div>│  │  │  │  │  │  ├BaseFragmentActivity.class</div>
 
-引入thinkInAndroid项目里面对网络状态的监听的封装 ，
+<div>│  │  │  │  │  │  └BaseViewPagerFragment.class</div>
 
-thanks thinkInAndroid作者的这几个类
+<div>│  │  │  │  │  ├<util></div>
 
-----------
+<div>│  │  │  │  │  │  ├ActivityTack.class</div>
 
-2015年8月20日14:00:15 --
+<div>│  │  │  │  │  │  ├AsyncHttpUtil$AsyHttpHandler.class</div>
 
-BaseApplication.java -- 自定义application
+<div>│  │  │  │  │  │  ├AsyncHttpUtil$FileHttpHandler.class</div>
 
-CrashHandler.java -- 全局异常监听处理工具类
+<div>│  │  │  │  │  │  ├AsyncHttpUtil$JsonHttpHandler.class</div>
 
-----------
+<div>│  │  │  │  │  │  ├AsyncHttpUtil$TextHttpHandler.class</div>
 
-2015年8月29日23:46:40 --
+<div>│  │  │  │  │  │  ├AsyncHttpUtil.class</div>
 
-新增对EditText内容长度的限制的工具类EditTextUtils.java工具类
+<div>│  │  │  │  │  │  ├BitmapUtil.class</div>
 
-----------
+<div>│  │  │  │  │  │  ├Colors.class</div>
 
-2015年9月2日08:47:48 --
+<div>│  │  │  │  │  │  ├ContentResolverUtils.class</div>
 
-新增对于okhttp的工具类的添加（代码来自最近翔哥分享的okhttp工具类）
+<div>│  │  │  │  │  │  ├DateUtils.class</div>
 
-okhttp-2.5.0.jar
+<div>│  │  │  │  │  │  ├DensityUtil.class</div>
 
-okio-1.6.0.jar
+<div>│  │  │  │  │  │  ├EditTextUtils$1.class</div>
 
+<div>│  │  │  │  │  │  ├EditTextUtils.class</div>
 
+<div>│  │  │  │  │  │  ├FileCache.class</div>
 
+<div>│  │  │  │  │  │  ├FileCacheUtil.class</div>
+
+<div>│  │  │  │  │  │  ├FileHelper$SDCardInfo.class</div>
+
+<div>│  │  │  │  │  │  ├FileHelper.class</div>
+
+<div>│  │  │  │  │  │  ├FlashIntentUtils.class</div>
+
+<div>│  │  │  │  │  │  ├GsonImpl$1.class</div>
+
+<div>│  │  │  │  │  │  ├GsonImpl.class</div>
+
+<div>│  │  │  │  │  │  ├ImageLoader$BitmapDisplayer.class</div>
+
+<div>│  │  │  │  │  │  ├ImageLoader$PhotosLoader.class</div>
+
+<div>│  │  │  │  │  │  ├ImageLoader$PhotosQueue.class</div>
+
+<div>│  │  │  │  │  │  ├ImageLoader$PhotoToLoad.class</div>
+
+<div>│  │  │  │  │  │  ├ImageLoader.class</div>
+
+<div>│  │  │  │  │  │  ├ImageLoadUtil.class</div>
+
+<div>│  │  │  │  │  │  ├InputCheckUtil.class</div>
+
+<div>│  │  │  │  │  │  ├IntentUtil.class</div>
+
+<div>│  │  │  │  │  │  ├Json.class</div>
+
+<div>│  │  │  │  │  │  ├JsonUtil.class</div>
+
+<div>│  │  │  │  │  │  ├ListUtil.class</div>
+
+<div>│  │  │  │  │  │  ├Logger.class</div>
+
+<div>│  │  │  │  │  │  ├MemoryCache.class</div>
+
+<div>│  │  │  │  │  │  ├NetUtil$netType.class</div>
+
+<div>│  │  │  │  │  │  ├NetUtil.class</div>
+
+<div>│  │  │  │  │  │  ├PhotoUtil$1.class</div>
+
+<div>│  │  │  │  │  │  ├PhotoUtil.class</div>
+
+<div>│  │  │  │  │  │  ├PreferenceUtils.class</div>
+
+<div>│  │  │  │  │  │  ├ServiceUtils.class</div>
+
+<div>│  │  │  │  │  │  ├ShortCutUtils.class</div>
+
+<div>│  │  │  │  │  │  ├SingletonUtils.class</div>
+
+<div>│  │  │  │  │  │  ├StringUtil.class</div>
+
+<div>│  │  │  │  │  │  ├TimeUtil.class</div>
+
+<div>│  │  │  │  │  │  ├ToastUtil$1.class</div>
+
+<div>│  │  │  │  │  │  ├ToastUtil$2.class</div>
+
+<div>│  │  │  │  │  │  ├ToastUtil.class</div>
+
+<div>│  │  │  │  │  │  ├UriUtils.class</div>
+
+<div>│  │  │  │  │  │  ├Validators.class</div>
+
+<div>│  │  │  │  │  │  ├VersionUtils.class</div>
+
+<div>│  │  │  │  │  │  ├ViewHolder.class</div>
+
+<div>│  │  │  │  │  │  ├<netstate></div>
+
+<div>│  │  │  │  │  │  │  ├TANetChangeObserver.class</div>
+
+<div>│  │  │  │  │  │  │  ├TANetworkStateReceiver.class</div>
+
+<div>│  │  │  │  │  │  │  ├TANetWorkUtil$netType.class</div>
+
+<div>│  │  │  │  │  │  │  └TANetWorkUtil.class</div>
+
+<div>│  │  │  │  │  │  ├<okhttp></div>
+
+<div>│  │  │  │  │  │  │  ├OkHttpClientManager$1.class</div>
+
+<div>│  │  │  │  │  │  │  ├OkHttpClientManager$2.class</div>
+
+<div>│  │  │  │  │  │  │  ├OkHttpClientManager$3.class</div>
+
+<div>│  │  │  │  │  │  │  ├OkHttpClientManager$4.class</div>
+
+<div>│  │  │  │  │  │  │  ├OkHttpClientManager$5.class</div>
+
+<div>│  │  │  │  │  │  │  ├OkHttpClientManager$DisplayImageDelegate$1$1.class</div>
+
+<div>│  │  │  │  │  │  │  ├OkHttpClientManager$DisplayImageDelegate$1.class</div>
+
+<div>│  │  │  │  │  │  │  ├OkHttpClientManager$DisplayImageDelegate$2.class</div>
+
+<div>│  │  │  │  │  │  │  ├OkHttpClientManager$DisplayImageDelegate.class</div>
+
+<div>│  │  │  │  │  │  │  ├OkHttpClientManager$DownloadDelegate$1.class</div>
+
+<div>│  │  │  │  │  │  │  ├OkHttpClientManager$DownloadDelegate.class</div>
+
+<div>│  │  │  │  │  │  │  ├OkHttpClientManager$GetDelegate.class</div>
+
+<div>│  │  │  │  │  │  │  ├OkHttpClientManager$HttpsDelegate.class</div>
+
+<div>│  │  │  │  │  │  │  ├OkHttpClientManager$ImageUtils$ImageSize.class</div>
+
+<div>│  │  │  │  │  │  │  ├OkHttpClientManager$ImageUtils.class</div>
+
+<div>│  │  │  │  │  │  │  ├OkHttpClientManager$Param.class</div>
+
+<div>│  │  │  │  │  │  │  ├OkHttpClientManager$PostDelegate.class</div>
+
+<div>│  │  │  │  │  │  │  ├OkHttpClientManager$ResultCallback.class</div>
+
+<div>│  │  │  │  │  │  │  ├OkHttpClientManager$UploadDelegate.class</div>
+
+<div>│  │  │  │  │  │  │  └OkHttpClientManager.class</div>
+
+<div>│  │  │  │  │  │  ├<systemstatus></div>
+
+<div>│  │  │  │  │  │  │  ├ScreenUtils.class</div>
+
+<div>│  │  │  │  │  │  │  ├SystemStatusManager$SystemBarConfig.class</div>
+
+<div>│  │  │  │  │  │  │  └SystemStatusManager.class</div>
+
+<div>│  │  │  │  │  │  ├<thread></div>
+
+<div>│  │  │  │  │  │  │  ├BaseTask.class</div>
+
+<div>│  │  │  │  │  │  │  ├Task$1.class</div>
+
+<div>│  │  │  │  │  │  │  ├Task.class</div>
+
+<div>│  │  │  │  │  │  │  ├ThreadUtils$1.class</div>
+
+<div>│  │  │  │  │  │  │  └ThreadUtils.class</div>
+
+<div>│  │  │  │  │  ├<view></div>
+
+<div>│  │  │  │  │  │  ├CircleImageView.class</div>
+
+<div>│  │  │  │  │  │  ├ContainsEmojiEditText$1.class</div>
+
+<div>│  │  │  │  │  │  ├ContainsEmojiEditText.class</div>
+
+<div>│  │  │  │  │  │  ├CustomerScrollView.class</div>
+
+<div>│  │  │  │  │  │  ├CustomListView$OnLoadMoreListener.class</div>
+
+<div>│  │  │  │  │  │  ├CustomListView$OnRefreshListener.class</div>
+
+<div>│  │  │  │  │  │  ├CustomListView.class</div>
+
+<div>│  │  │  │  │  │  ├EmailAutoCompleteTextview$1.class</div>
+
+<div>│  │  │  │  │  │  ├EmailAutoCompleteTextview$MyAdatper$MyFilter.class</div>
+
+<div>│  │  │  │  │  │  ├EmailAutoCompleteTextview$MyAdatper.class</div>
+
+<div>│  │  │  │  │  │  ├EmailAutoCompleteTextview.class</div>
+
+<div>│  │  │  │  │  │  ├LoadingView.class</div>
+
+<div>│  │  │  │  │  │  ├MyLetterListView.class</div>
+
+<div>│  │  │  │  │  │  ├QuickReturnListView.class</div>
+
+<div>│  │  │  │  │  │  ├TextURLView.class</div>
+
+<div>│  │  │  │  │  │  ├<dialog></div>
+
+<div>│  │  │  │  │  │  │  ├CommonMsgDialog$OnSubmitListener.class</div>
+
+<div>│  │  │  │  │  │  │  ├CommonMsgDialog.class</div>
+
+<div>│  │  │  │  │  │  │  └CommonProDialog.class</div>
+
+<div>│  │  │  │  │  │  ├<swipemenulistview></div>
+
+<div>│  │  │  │  │  │  │  ├SwipeMenu.class</div>
+
+<div>│  │  │  │  │  │  │  ├SwipeMenuAdapter.class</div>
+
+<div>│  │  │  │  │  │  │  ├SwipeMenuCreator.class</div>
+
+<div>│  │  │  │  │  │  │  ├SwipeMenuItem.class</div>
+
+<div>│  │  │  │  │  │  │  ├SwipeMenuLayout$1.class</div>
+
+<div>│  │  │  │  │  │  │  ├SwipeMenuLayout.class</div>
+
+<div>│  │  │  │  │  │  │  ├SwipeMenuListView$1.class</div>
+
+<div>│  │  │  │  │  │  │  ├SwipeMenuListView$OnMenuItemClickListener.class</div>
+
+<div>│  │  │  │  │  │  │  ├SwipeMenuListView$OnSwipeListener.class</div>
+
+<div>│  │  │  │  │  │  │  ├SwipeMenuListView.class</div>
+
+<div>│  │  │  │  │  │  │  ├SwipeMenuView$OnSwipeItemClickListener.class</div>
+
+<div>│  │  │  │  │  │  │  └SwipeMenuView.class</div>
+
+<div>│  │  │  │  │  │  ├<viewpagerindicator></div>
+
+<div>│  │  │  │  │  │  │  ├IconPagerAdapter.class</div>
+
+<div>│  │  │  │  │  │  │  ├IcsLinearLayout.class</div>
+
+<div>│  │  │  │  │  │  │  ├PageIndicator.class</div>
+
+<div>│  │  │  │  │  │  │  ├TabPageIndicator$1.class</div>
+
+<div>│  │  │  │  │  │  │  ├TabPageIndicator$2.class</div>
+
+<div>│  │  │  │  │  │  │  ├TabPageIndicator$OnTabReselectedListener.class</div>
+
+<div>│  │  │  │  │  │  │  ├TabPageIndicator$TabView.class</div>
+
+<div>│  │  │  │  │  │  │  ├TabPageIndicator.class</div>
+
+<div>│  │  │  │  │  │  │  ├UnderlinePageIndicator$1.class</div>
+
+<div>│  │  │  │  │  │  │  ├UnderlinePageIndicator$2.class</div>
+
+<div>│  │  │  │  │  │  │  ├UnderlinePageIndicator$SavedState$1.class</div>
+
+<div>│  │  │  │  │  │  │  ├UnderlinePageIndicator$SavedState.class</div>
+
+<div>│  │  │  │  │  │  │  ├UnderlinePageIndicator.class</div>
+
+<div>│  │  │  │  │  │  │  ├UnderlinePageIndicatorEx$1.class</div>
+
+<div>│  │  │  │  │  │  │  └UnderlinePageIndicatorEx.class</div>
+
+<div>│  ├<res></div>
+
+<div>│  │  ├<crunch></div>
+
+<div>│  │  │  ├<drawable></div>
+
+<div>│  │  │  │  ├actionbar_up_indicator.png</div>
+
+<div>│  │  │  │  ├common_btn_bg.9.png</div>
+
+<div>│  │  │  │  ├dialog_bg.png</div>
+
+<div>│  │  │  │  ├ic_launcher.png</div>
+
+<div>│  │  │  │  ├pic_download_fail.png</div>
+
+<div>│  │  │  │  ├red_btn_bg_nor.9.png</div>
+
+<div>│  │  │  │  ├red_btn_bg_pre.9.png</div>
+
+<div>│  │  │  │  ├refresh_arrow.png</div>
+
+<div>│  │  │  │  ├title_bg.9.png</div>
+
+<div>│  │  │  │  ├title_bg_mc.9.png</div>
+
+<div>│  │  │  │  ├title_progress.png</div>
+
+<div>│  │  │  │  └warning.png</div>
+
+<div>│  │  │  ├<drawable-hdpi></div>
+
+<div>│  │  │  │  ├vpi__tab_selected_focused_holo.9.png</div>
+
+<div>│  │  │  │  ├vpi__tab_selected_holo.9.png</div>
+
+<div>│  │  │  │  ├vpi__tab_selected_pressed_holo.9.png</div>
+
+<div>│  │  │  │  ├vpi__tab_unselected_focused_holo.9.png</div>
+
+<div>│  │  │  │  ├vpi__tab_unselected_holo.9.png</div>
+
+<div>│  │  │  │  └vpi__tab_unselected_pressed_holo.9.png</div>
+
+<div>├<gen></div>
+
+<div>│  ├<com></div>
+
+<div>│  │  ├<soyoungboy></div>
+
+<div>│  │  │  ├<base></div>
+
+<div>│  │  │  │  ├BuildConfig.java</div>
+
+<div>│  │  │  │  ├Manifest.java</div>
+
+<div>│  │  │  │  └R.java</div>
+
+<div>├<libs></div>
+
+<div>│  ├android-async-http-1.4.4.jar</div>
+
+<div>│  ├android-support-v4.jar</div>
+
+<div>│  ├gson-2.1.jar</div>
+
+<div>│  ├imageloader-1.9.2.jar</div>
+
+<div>│  ├okhttp-2.5.0.jar</div>
+
+<div>│  └okio-1.6.0.jar</div>
+
+<div>├<res></div>
+
+<div>│  ├<color></div>
+
+<div>│  │  ├common_text_color_black_blue.xml</div>
+
+<div>│  │  ├common_text_color_blue_white.xml</div>
+
+<div>│  │  └vpi__dark_theme.xml</div>
+
+<div>│  ├<drawable></div>
+
+<div>│  │  ├actionbar_up_indicator.png</div>
+
+<div>│  │  ├cancel_btn_bg.xml</div>
+
+<div>│  │  ├cancel_btn_bg_nor.xml</div>
+
+<div>│  │  ├cancel_btn_bg_pre.xml</div>
+
+<div>│  │  ├common_btn_bg.9.png</div>
+
+<div>│  │  ├dialog_bg.png</div>
+
+<div>│  │  ├ic_launcher.png</div>
+
+<div>│  │  ├pic_download_fail.png</div>
+
+<div>│  │  ├pic_download_fail_bg.9.png</div>
+
+<div>│  │  ├pic_downloading_bg.9.png</div>
+
+<div>│  │  ├red_btn_bg.xml</div>
+
+<div>│  │  ├red_btn_bg_nor.9.png</div>
+
+<div>│  │  ├red_btn_bg_pre.9.png</div>
+
+<div>│  │  ├refresh_arrow.png</div>
+
+<div>│  │  ├refresh_progress.xml</div>
+
+<div>│  │  ├selector_tabtext.xml</div>
+
+<div>│  │  ├title_bg.9.png</div>
+
+<div>│  │  ├title_bg_mc.9.png</div>
+
+<div>│  │  ├title_mid_leftbtn_bg.xml</div>
+
+<div>│  │  ├title_mid_rightbtn_bg.xml</div>
+
+<div>│  │  ├title_mid_text_color.xml</div>
+
+<div>│  │  ├title_mid_view_bg.xml</div>
+
+<div>│  │  ├title_progress.png</div>
+
+<div>│  │  ├title_textcolor.xml</div>
+
+<div>│  │  ├viewpager_title_textcolor.xml</div>
+
+<div>│  │  ├vpi__tab_indicator.xml</div>
+
+<div>│  │  └warning.png</div>
+
+<div>│  ├<drawable-hdpi></div>
+
+<div>│  │  ├vpi__tab_selected_focused_holo.9.png</div>
+
+<div>│  │  ├vpi__tab_selected_holo.9.png</div>
+
+<div>│  │  ├vpi__tab_selected_pressed_holo.9.png</div>
+
+<div>│  │  ├vpi__tab_unselected_focused_holo.9.png</div>
+
+<div>│  │  ├vpi__tab_unselected_holo.9.png</div>
+
+<div>│  │  └vpi__tab_unselected_pressed_holo.9.png</div>
+
+<div>│  ├<layout></div>
+
+<div>│  │  ├common_title_bar.xml</div>
+
+<div>│  │  ├common_url_textview.xml</div>
+
+<div>│  │  ├dialog_common_msg.xml</div>
+
+<div>│  │  ├refresh_footer.xml</div>
+
+<div>│  │  └refresh_head.xml</div>
+
+<div>│  ├<values></div>
+
+<div>│  │  ├attrs.xml</div>
+
+<div>│  │  ├colors.xml</div>
+
+<div>│  │  ├dimens.xml</div>
+
+<div>│  │  ├strings.xml</div>
+
+<div>│  │  ├styles.xml</div>
+
+<div>│  │  ├vpi__attrs.xml</div>
+
+<div>│  │  ├vpi__colors.xml</div>
+
+<div>│  │  ├vpi__defaults.xml</div>
+
+<div>│  │  └vpi__styles.xml</div>
+
+<div>├<src></div>
+
+<div>│  ├<com></div>
+
+<div>│  │  ├<soyoungboy></div>
+
+<div>│  │  │  ├<base></div>
+
+<div>│  │  │  │  ├<adapter></div>
+
+<div>│  │  │  │  │  └EasyAdapter.java</div>
+
+<div>│  │  │  │  ├<application></div>
+
+<div>│  │  │  │  │  └BaseApplication.java</div>
+
+<div>│  │  │  │  ├<bean></div>
+
+<div>│  │  │  │  │  └BaseBean.java</div>
+
+<div>│  │  │  │  ├<exception></div>
+
+<div>│  │  │  │  │  └CrashHandler.java</div>
+
+<div>│  │  │  │  ├<ui></div>
+
+<div>│  │  │  │  │  ├BaseActivity.java</div>
+
+<div>│  │  │  │  │  ├BaseFragment.java</div>
+
+<div>│  │  │  │  │  ├BaseFragmentActivity.java</div>
+
+<div>│  │  │  │  │  └BaseViewPagerFragment.java</div>
+
+<div>│  │  │  │  ├<util></div>
+
+<div>│  │  │  │  │  ├ActivityTack.java</div>
+
+<div>│  │  │  │  │  ├AsyncHttpUtil.java</div>
+
+<div>│  │  │  │  │  ├BitmapUtil.java</div>
+
+<div>│  │  │  │  │  ├Colors.java</div>
+
+<div>│  │  │  │  │  ├ContentResolverUtils.java</div>
+
+<div>│  │  │  │  │  ├DateUtils.java</div>
+
+<div>│  │  │  │  │  ├DensityUtil.java</div>
+
+<div>│  │  │  │  │  ├EditTextUtils.java</div>
+
+<div>│  │  │  │  │  ├FileCache.java</div>
+
+<div>│  │  │  │  │  ├FileCacheUtil.java</div>
+
+<div>│  │  │  │  │  ├FileHelper.java</div>
+
+<div>│  │  │  │  │  ├FlashIntentUtils.java</div>
+
+<div>│  │  │  │  │  ├GsonImpl.java</div>
+
+<div>│  │  │  │  │  ├ImageLoader.java</div>
+
+<div>│  │  │  │  │  ├ImageLoadUtil.java</div>
+
+<div>│  │  │  │  │  ├InputCheckUtil.java</div>
+
+<div>│  │  │  │  │  ├IntentUtil.java</div>
+
+<div>│  │  │  │  │  ├Json.java</div>
+
+<div>│  │  │  │  │  ├JsonUtil.java</div>
+
+<div>│  │  │  │  │  ├ListUtil.java</div>
+
+<div>│  │  │  │  │  ├Logger.java</div>
+
+<div>│  │  │  │  │  ├MemoryCache.java</div>
+
+<div>│  │  │  │  │  ├NetUtil.java</div>
+
+<div>│  │  │  │  │  ├PhotoUtil.java</div>
+
+<div>│  │  │  │  │  ├PreferenceUtils.java</div>
+
+<div>│  │  │  │  │  ├ServiceUtils.java</div>
+
+<div>│  │  │  │  │  ├ShortCutUtils.java</div>
+
+<div>│  │  │  │  │  ├SingletonUtils.java</div>
+
+<div>│  │  │  │  │  ├StringUtil.java</div>
+
+<div>│  │  │  │  │  ├TimeUtil.java</div>
+
+<div>│  │  │  │  │  ├ToastUtil.java</div>
+
+<div>│  │  │  │  │  ├UriUtils.java</div>
+
+<div>│  │  │  │  │  ├Validators.java</div>
+
+<div>│  │  │  │  │  ├VersionUtils.java</div>
+
+<div>│  │  │  │  │  ├ViewHolder.java</div>
+
+<div>│  │  │  │  │  ├<netstate></div>
+
+<div>│  │  │  │  │  │  ├TANetChangeObserver.java</div>
+
+<div>│  │  │  │  │  │  ├TANetworkStateReceiver.java</div>
+
+<div>│  │  │  │  │  │  └TANetWorkUtil.java</div>
+
+<div>│  │  │  │  │  ├<okhttp></div>
+
+<div>│  │  │  │  │  │  └OkHttpClientManager.java</div>
+
+<div>│  │  │  │  │  ├<systemstatus></div>
+
+<div>│  │  │  │  │  │  ├ScreenUtils.java</div>
+
+<div>│  │  │  │  │  │  └SystemStatusManager.java</div>
+
+<div>│  │  │  │  │  ├<thread></div>
+
+<div>│  │  │  │  │  │  ├BaseTask.java</div>
+
+<div>│  │  │  │  │  │  ├Task.java</div>
+
+<div>│  │  │  │  │  │  └ThreadUtils.java</div>
+
+<div>│  │  │  │  ├<view></div>
+
+<div>│  │  │  │  │  ├CircleImageView.java</div>
+
+<div>│  │  │  │  │  ├ContainsEmojiEditText.java</div>
+
+<div>│  │  │  │  │  ├CustomerScrollView.java</div>
+
+<div>│  │  │  │  │  ├CustomListView.java</div>
+
+<div>│  │  │  │  │  ├EmailAutoCompleteTextview.java</div>
+
+<div>│  │  │  │  │  ├LoadingView.java</div>
+
+<div>│  │  │  │  │  ├MyLetterListView.java</div>
+
+<div>│  │  │  │  │  ├QuickReturnListView.java</div>
+
+<div>│  │  │  │  │  ├TextURLView.java</div>
+
+<div>│  │  │  │  │  ├<dialog></div>
+
+<div>│  │  │  │  │  │  ├CommonMsgDialog.java</div>
+
+<div>│  │  │  │  │  │  └CommonProDialog.java</div>
+
+<div>│  │  │  │  │  ├<swipemenulistview></div>
+
+<div>│  │  │  │  │  │  ├SwipeMenu.java</div>
+
+<div>│  │  │  │  │  │  ├SwipeMenuAdapter.java</div>
+
+<div>│  │  │  │  │  │  ├SwipeMenuCreator.java</div>
+
+<div>│  │  │  │  │  │  ├SwipeMenuItem.java</div>
+
+<div>│  │  │  │  │  │  ├SwipeMenuLayout.java</div>
+
+<div>│  │  │  │  │  │  ├SwipeMenuListView.java</div>
+
+<div>│  │  │  │  │  │  └SwipeMenuView.java</div>
+
+<div>│  │  │  │  │  ├<viewpagerindicator></div>
+
+<div>│  │  │  │  │  │  ├IconPagerAdapter.java</div>
+
+<div>│  │  │  │  │  │  ├IcsLinearLayout.java</div>
+
+<div>│  │  │  │  │  │  ├PageIndicator.java</div>
+
+<div>│  │  │  │  │  │  ├TabPageIndicator.java</div>
+
+<div>│  │  │  │  │  │  ├UnderlinePageIndicator.java</div>
+
+<div>│  │  │  │  │  │  └UnderlinePageIndicatorEx.java</div>
+
+</div>
+
+<wiz_tmp_tag id="wiz-table-range-border" contenteditable="false" style="display: none;"></wiz_tmp_tag>
